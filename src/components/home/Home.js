@@ -14,7 +14,7 @@ const Home = () => {
       const fetchMovies = async()=>{
          setloading(true);
          try{
-            const res=await axios.get(`http://www.omdbapi.com/?s=${title}&apikey=${API_KEY}&type=movie`)
+            const res=await axios.get(`https://www.omdbapi.com/?s=${title}&apikey=${API_KEY}&type=movie`)
             dispatch(addMovies(res.data))
             console.log('res',res);
             setloading(false);
@@ -30,7 +30,7 @@ const Home = () => {
   useEffect(()=>{
     const fetchshows = async()=>{
        try{
-          const res=await axios.get(`http://www.omdbapi.com/?s=${show}&apikey=${API_KEY}&type=series`)
+          const res=await axios.get(`https://www.omdbapi.com/?s=${show}&apikey=${API_KEY}&type=series`)
           dispatch(addShows(res.data))
           console.log('res',res.data);
           
